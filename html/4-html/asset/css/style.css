@@ -233,6 +233,7 @@ body {
 #footer .sectiony {
   float: left;
   width:33.33333333333%;
+	padding: 0 10px;
 }
 #footer .sectiony h3 {
   margin-bottom: 10px;
@@ -252,17 +253,10 @@ body {
   font-size: .9em;
   padding: 15px 0;
 }
-
-
-
-
-
-
-
-
-
-
 /*  */
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 750px) {
+	#section-center .sectionx, #footer .sectiony {
+		width:100%;
+		margin-bottom: 30px;
+	}
 }
