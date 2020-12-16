@@ -73,6 +73,10 @@ body {
   width:100%;
   margin: 0 auto;
 }
+#header {
+  height:440px;
+  background: url(../img/people.jpg) no-repeat 80% 140px;
+}
 #header h1 {
   background-color: #BF3A17;
   color:#fff;
@@ -136,6 +140,12 @@ body {
 #header h2 span.titre4 {
   color: #0E0E0F;
   margin-left: 25%;
+}
+#section-center {
+  background-color: #EBEAD8;
+  line-height: 1.1;
+  border-top: 7px solid #E2E1CF;
+  padding: 35px 0;
 }
 
 
