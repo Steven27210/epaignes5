@@ -1,0 +1,113 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Reset Perso */
+*,*:after,*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.clear:before,.clear:after {
+  content:' ';display:table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom:1;
+}
+
+.wrap {
+  width:100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.wrap2 {
+  width:100%;
+  max-width: 840px;
+  margin: 0 auto;
+}
+body {
+	font: 400 18px/1.3 'Titillium Web', sans-serif;
+	color: #fff;
+}
+#header {
+  background-color: #87509C;
+}
+#header .fixed {
+	position: fixed;
+	width:100%;
+	background-color: #87509C;
+}
+#header .logo {
+	background: url('../img/weblitzer.svg') no-repeat;
+  width:200px;
+  height:72px;
+	float: left;
+}
+#header nav {
+  float: right;
+  margin-top: 22px;
+}
+#header nav ul li {
+	float: left;
+	margin-left: 15px;
+}
+#header nav ul li a {
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+#header nav ul li a:hover, #header nav ul li a.active {
+	  background-color: #643a79;
+}
+#header .presentation {
+	padding: 130px 0 80px 0;
+}
