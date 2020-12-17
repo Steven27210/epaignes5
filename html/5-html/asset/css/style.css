@@ -61,8 +61,20 @@ table {
 .clear {
   *zoom:1;
 }
-/* CSS PERSO */
 
+@font-face {
+    font-family: 'allstarregular';
+    src: url('../font/all_star_resort-webfont.woff2') format('woff2'),
+         url('../font/all_star_resort-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* CSS PERSO */
+.testtypo {
+	font-family: 'allstarregular';
+	font-size:5em;
+}
 #header {
 	background-color: grey;
 	height:100px;
@@ -88,6 +100,7 @@ table {
 	height:auto;
 }
 .bigimage h2 {
+	font-family: 'Titillium Web', sans-serif;
 	font-size: 5vw;
 	color:lime;
 	text-align: center;
