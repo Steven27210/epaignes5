@@ -96,3 +96,10 @@ table {
 	/* left:0;right:0; */
 	width:100%;
 }
+img.imgpos {
+	width:50px;
+	position: absolute;
+	top: -25px;
+	right:-25px;
+	border-radius:50%;
+}
