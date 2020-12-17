@@ -129,11 +129,51 @@ body {
   background-color: #fff;
   color:#eb7d4b;
 }
+h2 {
+  font-size: 2.22em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ligne {
+  width: 120px;
+  height:3px;
+  margin: 10px auto;
+}
+p.textintro {
+  text-align: center;
+  margin: 10px 0 40px 0;
+}
 /* programme */
 #programme {
   background-color: #17c2A4;
+	padding: 125px 10px 70px 10px;
+}
+#programme .ligne {
+  background-color: #14a58c;
+}
+#programme .languages .item {
+	float: left;
+	width:25%;
+}
+#programme .languages .item img {
+  width: 70%;
+	margin-left: 15%;
+}
+#programme .languages .item h3 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+}
+#programme .languages .item p {
+  text-align: center;
+  padding: 10px 25px;
 }
 /* inscription */
 #inscription {
   background-color: #3C5499;
+	padding: 125px 10px 40px 10px;
+}
+#inscription .ligne {
+  background-color: #273A71;
 }
