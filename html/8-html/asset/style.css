@@ -1,0 +1,123 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Pour des raisons de clarté le code ci-dessous n'est pas prefixer
+    il faudra le faire lors de la mise en production
+    https://autoprefixer.github.io/
+*/
+*,
+*:after,
+*:before {
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+/* clear */
+.clear:before,.clear:after { content:' '; display:table; }
+.clear:after { clear:both; }
+.clear { *zoom:1;}
+
+html { font-size:100%; }
+body { font:500 15px/1.4 'Montserrat', sans-serif;color:#3b3b3b; background-color: #fff;
+    overflow-x: hidden;
+}
+.wrap {max-width: 1440px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap2 {max-width: 1324px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap3 {max-width: 1235px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap4 {max-width: 785px;width:100%;margin: 0 auto;padding: 0 15px;}
+.fontAlfa {font-family: 'Alfa Slab One', cursive; }
+.fontBebas {font-family: 'Bebas Neue', cursive; }
+.color_brown {color: #42200b;}
+.bold {font-weight: bold;}
+a { color:grey; text-decoration:none; }
+
+/* Header */
+#masthead {background-color: #ffc135;}
+#masthead_start {padding-top:52px;}
+#masthead_start .logo {float: left;}
+#masthead_start .logo img {width:210px;}
+#masthead_start .delivery {float: right;}
+#masthead_start .delivery div{float: left;}
+#masthead_start .delivery div img{width:30px;}
+#masthead_start .delivery p {float:left;margin-left: 20px;}
+
+#navigation {float: right;z-index:999;position: relative;}
+#navigation ul li {float: left;margin-left: 20px;}
+#navigation ul li a{color: #42200b;text-transform: uppercase;font-family: 'Bebas Neue', cursive;font-size: 1.8em;}
+#navigation ul li a:hover{opacity: .8;}
+
+#masthead_burger .mas_burger {float: left;width:50%;}
+#masthead_burger .mas_burger_text {margin-top: 50px;}
+#masthead_burger .mas_burger_text p:nth-child(1){
+  font-size: 1.4em;border: dashed 2px #42200b;
+  padding: 3px 15px;
+  display: inline-block;
+}
+#masthead_burger .mas_burger_text h2 {
+  font-size: 8vw;line-height: 1.3em;text-shadow: 4px 4px 3px rgba(255, 255, 255, 1);
+}
+#masthead_burger .mas_burger_text p:nth-child(3){font-size: 4vw;line-height: .5em;text-shadow: 4px 4px 3px rgba(255, 255, 255, 1);}
+
+#masthead_burger .mas_burger_img {
+  margin-top: -10%;margin-bottom: 40px;
+  position: relative;
+}
+#masthead_burger .mas_burger_img img{width: 100%;}
+#masthead_burger .mas_burger_img .rond_rouge{
+  background-color: #df1c1c;color:#fff;height:170px; width: 170px;border-radius:50%;
+  position: absolute;bottom: 10px;left:10%;
+}
+#masthead_burger .mas_burger_img .trait_blanc {
+  border:2px dashed #fff;height:150px; width: 150px;border-radius:50%;
+  position: absolute;top:10px; left:10px;
+}
+#masthead_burger .mas_burger_img .price{text-transform: uppercase;font-size: 1.8em; text-align: center;line-height: 1;font-family: 'Bebas Neue', cursive;
+position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+#masthead_burger .mas_burger_img .price span{font-size: 2.8em;font-weight: bold;}
+#masthead_burger .mas_burger_img .price .only{letter-spacing: 15px;margin-left: 15px; }
