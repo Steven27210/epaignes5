@@ -1,0 +1,86 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*,
+*:after,
+*:before {
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+/* clear */
+.clear:before,.clear:after { content:' '; display:table; }
+.clear:after { clear:both; }
+.clear { *zoom:1;}
+
+
+.wrap {max-width: 1040px;width:100%;margin: 0 auto;padding: 0 15px;}
+.wrap2 {max-width: 1040px;width:100%;margin: 0 auto;}
+.wrap3 {max-width: 700px;width:100%;margin: 0 auto;}
+
+#header {background-color: gainsboro;}
+#header .logo {float: left;padding: 10px 0 0 0;}
+
+#header .allmenu {float: right;margin-top: 20px;}
+#header .allmenu .menuborder {border: 1px solid grey;padding: 5px 10px;margin-bottom: 10px;}
+#header .allmenu li{float: left;margin-left: 20px;}
+#header .allmenu li a{text-decoration: none;color:green;font-size: 1.4em;}
+#header .allmenu li a:hover{opacity: .8;}
+
+.bigimg img {width:100%;}
+
+#shop {margin: 30px 0;}
+#shop .allproducts {margin-left: -2%;}
+#shop .product {background-color: #ddd;float: left;width:48%;margin-left: 2%;}
+#shop .product .prod_img {position: relative;}
+#shop .product .prod_img img {width:100%;}
+#shop .product .prod_img .boxred {position: absolute;top:-10px;right:-10px;padding: 3px;border-radius: 2px;background-color: red;color:#fff;}
+#shop .product .prodtext {text-align: center;font-size:2em;}
+#shop .product .prodtext h1{margin: 10px 0;}
+
+#footer {background-color: gainsboro;padding: 20px 0;}
+#footer ul {text-align: center;}
+#footer ul li{display: inline-block;margin-left: 10px;margin-right: 10px;}
+#footer ul li a img {border-radius: 50%;}
