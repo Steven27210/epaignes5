@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>js3 - formulaire</title>
+    <style media="screen">
+      .error {color:red;}
+      .success {color:green;}
+      .wrap {max-width:400px;width:100%;margin:0 auto;}
+      label {display:block;margin-top:20px;}
+      input, textarea, select {width:100%;}
+    </style>
+  </head>
+  <body>
+
+    <div class="wrap">
+      <form action="#" method="post">
+        <label for="nom">Nom * (3,20)</label>
+        <input type="text" id="nom" name="nom" value="" onblur="verifText('nom')">
+        <span class="error" id="errornom"></span>
+        <span class="success" id="successnom"></span>
+
+        <label for="prenom">Prénom * (4,30)</label>
+        <input type="text" id="prenom" name="prenom" value="" onblur="verifText('prenom',4,30)">
+        <span class="error" id="errorprenom"></span>
+        <span class="success" id="successprenom"></span>
+
+        <label for="message">Message * (10,500)</label>
+        <textarea id="message" name="message" rows="8" cols="80" onkeyup="verifText('message',10,500)"></textarea>
+        <span class="error" id="errormessage"></span>
+        <span class="success" id="successmessage"></span>
+
+        <label for="fruits">Fruits</label>
+        <select id="fruits" name="fruits" onchange="verifSelectColorized()">
+          <option value="">-- --</option>
+          <option value="banane">Banane</option>
+          <option value="kiwi">Kiwi</option>
+          <option value="papaye">Papaye</option>
+        </select>
+
+      </form>
+    </div>
+
+    <script src="asset/js/main.js" charset="utf-8"></script>
+  </body>
+</html>

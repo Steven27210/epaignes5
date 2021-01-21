@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS 1</title>
+    <style media="screen">
+      #test {
+        width:200px;
+        height:200px;
+        background-color: green;
+        position: absolute;
+        top:0;
+        right:0;
+        transition: top 1s, right 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="js_cible">TITRE de la cible</h2>
+    <ul>
+      <li>banane</li>
+      <li>papaye</li>
+      <li>kiwi</li>
+      <li>orange</li>
+    </ul>
+
+    <h3 class="bigtitle">titre 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <h3 class="bigtitle">titre 2</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <h3 class="bigtitle">titre 3</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <div id="btnclick" onmouseleave="clickPerso()">Click ici</div>
+
+    <p onclick="changeColor(this)">Lorem ipsum dol 1</p>
+    <p onmouseleave="changeColor(this)">Lorem ipsum dol 2</p>
+    <p onmouseenter="changeColor(this)">Lorem ipsum dol 3</p>
+
+    <a id="news" href="contact.html">Les news</a>
+
+    <div id="test"></div>
+
+    <script src="asset/js/main.js" charset="utf-8"></script>
+  </body>
+</html>
