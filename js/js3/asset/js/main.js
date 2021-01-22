@@ -29,6 +29,7 @@ function verifSelectColorized()
   console.log('ok')
   // cible mon select grace à son id
   var select = document.getElementById('fruits');
+  var error = document.getElementById('errorfruits')
   console.log(select)
   // recupere la value de l'option choisit
   var value = select.value;
@@ -46,6 +47,7 @@ function verifSelectColorized()
   } else {
     //select.style.backgroundColor = 'white';
     colorized(select,'white','blue')
+    error.innerHTML = 'Veuillez renseigner un fruit'
   }
 }
 
@@ -53,4 +55,16 @@ function colorized(select,color, color2 = 'black')
 {
   select.style.backgroundColor = color;
   select.style.color = color2;
+}
+
+function validation()
+{
+  verifText('nom')
+  verifText('prenom',4,30)
+  verifText('message',10,500)
+  verifSelectColorized()
+  // si pas d'error
+    //return true;
+  // sinon
+    return false
 }

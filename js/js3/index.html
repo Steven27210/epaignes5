@@ -14,7 +14,7 @@
   <body>
 
     <div class="wrap">
-      <form action="#" method="post">
+      <form action="" method="post" onsubmit="return validation()">
         <label for="nom">Nom * (3,20)</label>
         <input type="text" id="nom" name="nom" value="" onblur="verifText('nom')">
         <span class="error" id="errornom"></span>
@@ -37,6 +37,9 @@
           <option value="kiwi">Kiwi</option>
           <option value="papaye">Papaye</option>
         </select>
+        <span class="error" id="errorfruits"></span>
+
+        <input type="submit" name="" value="Envoyer">
 
       </form>
     </div>
