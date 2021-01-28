@@ -1,7 +1,7 @@
 <?php
-///////////
-// Challenge
-///////////
+/////////////
+// Challenge TODOLIST 
+/////////////
 
 // Nous souhaitons implémenter un système permettant de gérer une liste (de courses, de choses à faire...). Ce système sera développé en utilisant jQuery, et les notions de javascript abordées au cours précédent.
 
