@@ -55,6 +55,9 @@ table {
 .clear:after { clear:both; }
 .clear { *zoom:1;}
 
+body {
+  /* background-color: grey */
+}
 
 .wrap {max-width: 1240px;width:100%;margin: 0 auto;padding: 0 15px;}
 #header {background-color: grey;height:70px;margin-bottom: 30px;}
@@ -72,6 +75,37 @@ table {
 #menu_responsive ul li a:hover{opacity: .8;}
 #menu_responsive #times {position: absolute;top:20px;right:20px;font-size: 1.5em;color:#fff;}
 #menu_responsive #times:hover {cursor: pointer;opacity:.8;}
+
+.flexslider {
+  background: none;
+  border: none;
+}
+.bigboite {
+  position: relative;
+}
+.textpardessus {
+  position: absolute;
+  transform: translateY(-50%);
+  top:50%;left:20%;right:20%;
+  text-align: center;
+  padding: 10px;
+  background-color: lime;
+}
+.miniboite {
+  position: absolute;
+  top:20%;left:0; right:0;
+  background-color: yellow;
+  text-align: center;
+  color:lime;
+  /* z-index:99999; */
+}
+#diapo1 ul li .divrelative{
+  position: relative;
+}
+.logoiconeflex {
+  position: absolute;top:20px;right:20px;
+}
+.logoiconeflex i {font-size: 3em;color:lime;}
 @media screen and (max-width: 760px) {
   #navigation {display: none;}
   #logoburger {display:block;}
