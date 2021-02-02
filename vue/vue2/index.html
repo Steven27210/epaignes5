@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 2</title>
+
+  </head>
+  <body>
+    <div id="app">
+      <h1>Cirque Michellus</h1>
+      <p>{{ message }}</p>
+      <p>Place standard: 10 euros <input type="number" min="0" v-model="standard"> </p>
+      <p>Place first: 30 euros <input type="number" min="0" v-model="first"> </p>
+      <p>Place vip: 70 euros <input type="number" min="0" v-model="vip"> </p>
+
+      <p>{{ total }}</p>
+
+      <button @click.prevent="reset" type="button" name="button">Reset</button>
+      <div v-for="commande in commandes" v-if="commande.total == 0 ? false : true">
+        <p v-if="commande.nombrestandard == 0 ? false : true">Standard: {{ commande.nombrestandard }}</p>
+        <p v-if="commande.nombrefirst == 0 ? false : true">First: {{ commande.nombrefirst }}</p>
+        <p v-if="commande.nombrevip == 0 ? false : true">VIP: {{ commande.nombrevip }}</p>
+        <p>Total: {{ commande.total }}</p>
+        <hr>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="asset/js/main.js" charset="utf-8"></script>
+  </body>
+</html>

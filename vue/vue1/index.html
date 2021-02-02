@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 1</title>
+    <style media="screen">
+      .good {background-color: green;}
+      .bad {background-color: red;}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>Age : {{ age }}</p>
+      <p>{{ fruits }}</p>
+      <p>Le premier : {{ fruits[0] }}</p>
+      <h2>{{ book.title }}</h2>
+      <p>{{ (32 - 13) * 23 }}</p>
+      <p>{{ 'michel'.toUpperCase() }}</p>
+      <p>{{ age > 43 ? 'je suis vieux' : 'Vous êtes jeune' }}</p>
+      <!-- <p><a v-bind:href="url">{{ url }}</a></p> -->
+      <p><a :href="url" :title="age">{{ url }}</a></p>
+      <!-- display:none; -->
+      <p class="alert" style="color:red" v-show="needLove">{{ message }}</p>
+      <!-- element disparait du DOM -->
+      <p class="success" style="color:green" v-if="!needLove">Merci pour votre message</p>
+      <!-- Faire dans console => app.needLove = false -->
+      <p class="alert" v-else>Je ne vous remercie pas.</p>
+      <!-- Boucles  -->
+      <ul>
+        <li v-for="fruit in fruits">{{ fruit }}</li>
+      </ul>
+      <!-- console => app.fruits.push('Goyave') -->
+      <div v-for="product in panier">
+        <h2>{{product.name}}</h2>
+        <p><strong>{{product.count}}</strong> x {{product.price}} $</p>
+      </div>
+      <!-- v-model -->
+      <p>{{ information }}</p>
+      <input type="text" v-model="information">
+      <input type="checkbox" v-model="needLove">
+
+      <div v-if="open">
+        <!-- <span v-on:click="close">X</span> -->
+        <span @click="close">X</span>
+        <p>Ici un message vraiment trés interessant</p>
+      </div>
+
+      <p :class="needLove ? 'good' : 'bad'">{{ message }}</p>
+      <p :class="{good: needLove, bad: !needLove}">{{ message }}</p>
+
+      <input type="text" v-model="nom">
+      <input type="text" v-model="prenom">
+      <p>Bonjour {{ nom }} {{ prenom }}</p>
+      <p>{{ hello }}</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript">
+      let app = new Vue({
+        el: '#app',
+        data: { //
+          message: 'hello Vue!', // String
+          age: 45, // number
+          needLove: true, // Boolean
+          fruits: ['Banane','Kiwi', 'Papaye'], // array
+          book: {
+            title: 'javascript vue js tuto',
+            annee: 2020
+          },
+          url: 'https://weblitzer.fr',
+          panier: [
+            { name: 'steack', count: 3, price: 3.45},
+            { name: 'fromage', count: 12, price: 13.25},
+            { name: 'beurre', count: 2, price: 1.45},
+            { name: 'patate', count: 100, price: 0.45},
+          ],
+          information: 'dede',
+          open: true,
+          nom: '',
+          prenom: ''
+        },
+        methods: {
+          // close: function() {
+          close() {
+            this.open = false
+            this.information = 'hello goodbye'
+          }
+        },
+        computed: {
+          // propriétés calculées
+          hello() {
+            if(this.nom != '' && this.prenom != '') {
+              return 'Bonjour ' + this.nom + ' ' + this.prenom
+            }
+
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
