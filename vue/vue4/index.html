@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 4 - Events</title>
+    <style media="screen">
+      .red {background-color: red;font-size: .8em;font-style: italic;}
+      .green {background-color: green;font-size: 3.8em;font-weight: bold;}
+    </style>
+
+  </head>
+  <body>
+    <div id="app">
+      {{ counter }}
+      <button type="button" v-on:click="increase($event,1)">Ajouter 1</button>
+      <button type="button" v-on:click="increase($event,3)">Ajouter 3</button>
+      <button type="button" v-on:click="decrease(1,$event)">Enlever 1</button>
+      <button type="button" v-on:click="decrease(5,$event)">Enlever 5</button>
+
+      <p @mousemove="updateCoordonnee" :class="color ? 'green' : 'red'">
+        coordonnées : X : {{ x }}, Y : {{ y }}
+        - <span @mousemove.stop="">die die die die die</span>
+      </p>
+      <p>
+        <input type="text" @keyup.enter="changeColor">
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        x: 0,
+        y: 0,
+        color: true
+      },
+      methods: {
+        increase: function(event,step) {
+          // console.log(event);
+          this.counter += step
+        },
+        decrease: function(step,event) {
+          this.counter -= step
+        },
+        updateCoordonnee: function(event)
+        {
+          this.x = event.clientX
+          this.y = event.clientY
+        },
+        changeColor: function(){
+          console.log(event.target.value);
+          this.color = !this.color
+        }
+      }
+    });
+    </script>
+
+  </body>
+</html>
