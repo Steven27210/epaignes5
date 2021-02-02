@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 5 - FOR</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="lang in languages" :key="lang">{{ lang }}</li>
+      </ul>
+
+      <ol>
+        <li v-for="(lang, index) in languages">#{{ index }} : {{ lang }}</li>
+      </ol>
+
+      <ul>
+        <li v-for="author in authors">
+          <div v-for="(value, key, index) in author">
+            {{ key }}: {{ value }} - ({{ index }})
+          </div>
+        </li>
+      </ul>
+
+      <ol>
+        <li v-for="n in 10">{{ n * 27 }}</li>
+      </ol>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        languages: [
+          'vue js',
+          'angular',
+          'react',
+          'js',
+          'php',
+          'sql',
+          'poo'
+        ],
+        authors: [
+          { name: 'michel', lang: 'php', year: 2012},
+          { name: 'jacky', lang: 'angular', year: 2014},
+          { name: 'bernard', lang: 'vue', year: 2015},
+          { name: 'axel', lang: 'sql', year: 2017},
+        ]
+      },
+    });
+    </script>
+  </body>
+</html>
