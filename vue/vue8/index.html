@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 8 - memory game</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h2>Jeux du Memory</h2>
+      <div v-if="!starter">
+        <button type="button" @click="start">Start</button>
+        <input type="number" min="2" max="15" v-model="countcard">
+      </div>
+      <div v-if="starter">
+        <p>Score : {{ score }}</p>
+        <p>Nombre de coup : {{ nbcoup }}</p>
+        <div id="games">
+          <div v-for="(image,index) in images">
+            <img v-show="!image.open" width="200px" height="300px" src="https://cdn.pixabay.com/photo/2012/04/11/14/04/ace-28357_960_720.png" alt="" @click="verifcard(index,image.img)">
+            <img v-show="image.open" v-bind:src="'https://picsum.photos/id/'+image.img+'/200/300'">
+          </div>
+        </div>
+
+      </div>
+      <p v-if="success">Bravo tu es le plus fort</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="asset/js/main.js" charset="utf-8"></script>
+  </body>
+</html>

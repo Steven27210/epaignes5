@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 7 - components</title>
+  </head>
+  <body>
+    <div id="app">
+      <click-counter :debut="4"></click-counter>
+      <click-counter :debut="12"></click-counter>
+      <click-counter></click-counter>
+      <liste></liste>
+      <liste :infos="fruits"></liste>
+      <form-human v-model="user">
+        <div slot="foot">Text du footer</div>
+        <div slot="head">Text du header</div>
+          <h2>ici le formulaire d'un user</h2>
+      </form-human>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component('click-counter', {
+      template: '<div><button @click="count++">{{ count }}</button></div>',
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      props: {
+        debut: {
+          type: Number,
+          default: 0
+        }
+      },
+      mounted: function(){
+        this.count = this.debut
+      }
+    })
+
+    let liste = {
+      template: '<ul><li v-for="info in infos">{{ info }}</li></ul>',
+      props: {
+        infos: {
+          type: Array,
+          default: function() {
+            return ['michel','jacky']
+          }
+        }
+      }
+    }
+    let formHuman = {
+      template: `<div>
+      <slot name="head"></slot>
+        <slot></slot>
+        <form method="post">
+          <label for=""> prenom</label>
+          <input type="text" v-model="user.prenom">
+
+          <label for="">nom</label>
+          <input type="text" v-model="user.nom">
+
+          <input type="submit" name="" value="Go">
+        </form>
+        <slot name="foot"></slot>
+
+      </div>`,
+      props: {
+        value: Object
+      },
+      data: function() {
+        return {
+          user: JSON.parse(JSON.stringify(this.value))
+        }
+      },
+    }
+    new Vue({
+      el: '#app',
+      data: {
+        fruits: ['Kiwi','Banane','Papaye'],
+        user: {
+          nom: 'bertolucci',
+          prenom: 'Michel'
+        }
+      },
+      components: {
+        liste: liste,
+        formHuman: formHuman
+      },
+      methods: {
+
+      }
+    });
+    </script>
+  </body>
+</html>

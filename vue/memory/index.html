@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue js - Memory</title>
+  <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+    <div id="app">
+      <h2>Jeux du memory</h2>
+<div v-if="!starter">
+      <button class="btnstart" type="button" @click="start">Start</button>
+      <input type="number" min="1" max="20" v-model="countcard">
+</div>
+      <div v-if="success">
+        <p>Bravo</p>
+      </div>
+      <div v-else>
+        <div v-if="starter">
+        <p>Score: {{ score }}</p>
+        <p>Nombre de coup {{ nbcoup }}</p>
+        </div>
+        <!-- v-show="isShow" -->
+        <div id="games">
+          <div v-for="(image, index) in images">
+            <!-- carte retourner , comment faire ?? -->
+            <img v-show="!image.open" width="100px" height="130px" src="https://cdn.pixabay.com/photo/2012/04/11/14/04/ace-28357_960_720.png" @click="verifcard(index,image.img)" alt="carte base">
+            <img v-show="image.open" v-bind:src="'https://picsum.photos/id/'+image.img+'/100/130'" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="asset/js/main.js" charset="utf-8"></script>
+</body>
+</html>

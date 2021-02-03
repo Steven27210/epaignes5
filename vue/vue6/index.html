@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js 6 - v-if v-else</title>
+  </head>
+  <body>
+    <h1>v-if, v-else, v-else-if and v-show</h1>
+    <div id="app">
+      <button @click="changeShow">Click</button>
+
+      <p v-if="show">v-if text here 1</p>
+      <p v-else-if="!show">v-else-if text here 1</p>
+
+      <p v-if="show">v-if text here 2</p>
+      <p v-else>v-else-if text here 2</p>
+
+      <p v-show="show">
+        texte with v-show
+      </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        show: true
+      },
+      methods: {
+        changeShow: function(){
+          this.show = !this.show
+        }
+      }
+    });
+    </script>
+  </body>
+</html>
