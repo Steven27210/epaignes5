@@ -11,36 +11,36 @@ echo '</pre>';
 echo '<div id="items">';
 for ($i = 0; $i < count($tiroirs);$i++) {
     echo '<div class="item">';
-        echo '<h2>'.$tiroirs[$i].'</h2>';
+    echo '<h2>'.$tiroirs[$i].'</h2>';
     echo '</div>';
 }
 echo '</div>';
 ?>
-<div id="items">
-    <?php for ($i = 0; $i < count($tiroirs);$i++) { ?>
-    <div class="item">
-        <h2><?= $tiroirs[$i]; ?></h2>
+    <div id="items">
+        <?php for ($i = 0; $i < count($tiroirs);$i++) { ?>
+            <div class="item">
+                <h2><?= $tiroirs[$i]; ?></h2>
+            </div>
+        <?php } ?>
     </div>
-    <?php } ?>
-</div>
 
 <?php
 // FOREACH
 echo '<div id="items">';
 foreach ($tiroirs as $tiroir) {
     echo '<div class="item">';
-        echo '<h2>'.$tiroir.'</h2>';
+    echo '<h2>'.$tiroir.'</h2>';
     echo '</div>';
 }
 echo '</div>';
 ?>
-<div id="items">
-    <?php foreach ($tiroirs as $tiroir) { ?>
-        <div class="item">
-            <h2><?= $tiroir; ?></h2>
-        </div>
-    <?php } ?>
-</div>
+    <div id="items">
+        <?php foreach ($tiroirs as $tiroir) { ?>
+            <div class="item">
+                <h2><?= $tiroir; ?></h2>
+            </div>
+        <?php } ?>
+    </div>
 
 <?php
 
@@ -128,11 +128,11 @@ echo '<pre>';
 print_r($mess);
 echo '</pre>';
 // afficher avant dernier etudiant à partir de $mess
-    echo $mess[2][4];
+echo $mess[2][4];
 // affichez votre age à partir de cet array
-    echo $mess['me']['age'];
+echo $mess['me']['age'];
 // modifiez la valeur booléenne à partir de cet array
-    $mess[1] = false;
+$mess[1] = false;
 // Faire un ul li des etudiants à partir de $mess
 echo '<ul>';
 foreach ($mess[2] as $user) {
@@ -209,47 +209,52 @@ $utilisateurs = array(
     array('nom' => 'Mathilde', 'mail' => 'math@gmail.com', 'age' => 24),
     array('nom' => 'Michel', 'mail' => 'michel@bertollucci.com', 'age' => 14),
     array('nom' => 'Amandine', 'mail' => 'amandine@lp.fr', 'age' => 54),
-); 
+);
 echo '<section id="users">';
 foreach ($utilisateurs as $user) {
     echo '<div class="user">';
-        echo '<h3>'.$user['nom'].'</h3>';
-        echo '<p class="user_email">Email: '.$user['mail'].'</p>';
-        echo '<p class="user_age">Age: '.$user['age'].'</p>';
+    echo '<h3>'.$user['nom'].'</h3>';
+    echo '<p class="user_email">Email: '.$user['mail'].'</p>';
+    echo '<p class="user_age">Age: '.$user['age'].'</p>';
     echo '</div>';
 }
 echo '</section>';
 ?>
 
-<section id="users">
-    <?php foreach ($utilisateurs as $user): ?>
-        <div class="user">
-            <h3><?= $user['nom']; ?></h3>
-            <p class="user_email">Email: <?= $user['mail']; ?></p>
-            <p class="user_age">Age: <?= $user['age']; ?></p>
-        </div>
-    <?php endforeach; ?>
-</section>
+    <section id="users">
+        <?php foreach ($utilisateurs as $user): ?>
+            <div class="user">
+                <h3><?= $user['nom']; ?></h3>
+                <p class="user_email">Email: <?= $user['mail']; ?></p>
+                <p class="user_age">Age: <?= $user['age']; ?></p>
+            </div>
+        <?php endforeach; ?>
+    </section>
 
 <?php
 
 $arrayDeOuf = array(
-        0 => "fdjsa",
-        1 => 2332,
-        2 => array(
-            0 => "dsajf",
-            "sdfsd" => array(
-                0 => 9034,
-                "kkk" => "vvv",
-                2390 => array(
-                    'dede'  => 'drd'
-                )
-            ),
-            array(
-                0 => 1,
-                1 => 2,
-                3,
-                "k"
+    0 => "fdjsa",
+    1 => 2332,
+    2 => array(
+        0 => "dsajf",
+        "sdfsd" => array(
+            0 => 9034,
+            "kkk" => "vvv",
+            2390 => array(
+                'dede'  => 'drd'
             )
+        ),
+        array(
+            0 => 1,
+            1 => 2,
+            3,
+            "k"
         )
-    );
+    )
+);
+echo '<pre>';
+print_r($arrayDeOuf);
+echo '</pre>';
+
+echo $arrayDeOuf[2]['sdfsd'][2390]['dede'];
