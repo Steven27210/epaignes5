@@ -230,3 +230,26 @@ echo '</section>';
         </div>
     <?php endforeach; ?>
 </section>
+
+<?php
+
+$arrayDeOuf = array(
+        0 => "fdjsa",
+        1 => 2332,
+        2 => array(
+            0 => "dsajf",
+            "sdfsd" => array(
+                0 => 9034,
+                "kkk" => "vvv",
+                2390 => array(
+                    'dede'  => 'drd'
+                )
+            ),
+            array(
+                0 => 1,
+                1 => 2,
+                3,
+                "k"
+            )
+        )
+    );
