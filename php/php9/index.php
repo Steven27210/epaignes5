@@ -2,11 +2,12 @@
 require('inc/fonction.php');
 // if formulaire soumis
 $errors = array();
+$success = false;
 if(!empty($_POST['submitted'])) {
     // Faille XSS
-    $nom     = trim(strip_tags($_POST['nom']));
-    $prenom  = trim(strip_tags($_POST['prenom']));
-    $message = trim(strip_tags($_POST['message']));
+    $nom     = cleanXss('nom');
+    $prenom  = cleanXss('prenom');
+    $message = cleanXss('message');
     // validation
     // nom , renseigné, min 2, max 50
     if(!empty($nom)) {
@@ -38,12 +39,23 @@ if(!empty($_POST['submitted'])) {
     } else {
         $errors['message'] = 'Veuillez renseigner ce champ';
     }
+    // si no errors
+    if(count($errors) == 0) {
+        $success = true;
+        // insertion en base
+        // envoie d'un email
+        // redirection
+    }
 
 }
 debug($_POST);
 debug($errors);
 
 include('inc/header.php'); ?>
+
+<?php if($success == true) {
+    echo '<p>Bravo merci pour votre message</p>';
+} else { ?>
     <form action="index.php" method="POST" class="wrap">
         <label for="nom">Nom *</label>
         <input type="text" id="nom" name="nom" value="<?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } ?>">
@@ -59,4 +71,5 @@ include('inc/header.php'); ?>
 
         <input type="submit" name="submitted" value="Envoyer">
     </form>
+<?php } ?>
 <?php include('inc/footer.php');
