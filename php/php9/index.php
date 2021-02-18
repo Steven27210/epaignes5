@@ -8,36 +8,17 @@ if(!empty($_POST['submitted'])) {
     $nom     = cleanXss('nom');
     $prenom  = cleanXss('prenom');
     $message = cleanXss('message');
+    $email   = cleanXss('email');
+    $url     = cleanXss('url');
+    $fruit     = cleanXss('fruits');
     // validation
-    // nom , renseigné, min 2, max 50
-    if(!empty($nom)) {
-        if(mb_strlen($nom) < 2) {
-            $errors['nom'] = 'min 2 caractères';
-        } elseif(mb_strlen($nom) > 50) {
-            $errors['nom'] = 'max 50 caractères';
-        }
-    } else {
-        $errors['nom'] = 'Veuillez renseigner ce champ';
-    }
-    // validation prenom
-    if(!empty($prenom)) {
-        if(mb_strlen($prenom) < 4) {
-            $errors['prenom'] = 'min 4 caractères';
-        } elseif(mb_strlen($prenom) > 60) {
-            $errors['prenom'] = 'max 60 caractères';
-        }
-    } else {
-        $errors['prenom'] = 'Veuillez renseigner ce champ';
-    }
-    // validation message
-    if(!empty($message)) {
-        if(mb_strlen($message) < 10) {
-            $errors['message'] = 'min 10 caractères';
-        } elseif(mb_strlen($message) > 500) {
-            $errors['message'] = 'max 500 caractères';
-        }
-    } else {
-        $errors['message'] = 'Veuillez renseigner ce champ';
+    $errors = validText($errors,$nom,'nom');
+    $errors = validText($errors,$prenom,'prenom',4,60);
+    $errors = validText($errors,$message,'message',4,60);
+    $errors = validEmail($errors,$email,'email');
+    $errors = validUrl($errors,$url,'url');
+    if(empty($fruit)) {
+        $errors['fruits'] = 'Veuillez renseigner un fruit';
     }
     // si no errors
     if(count($errors) == 0) {
@@ -46,7 +27,6 @@ if(!empty($_POST['submitted'])) {
         // envoie d'un email
         // redirection
     }
-
 }
 debug($_POST);
 debug($errors);
@@ -56,7 +36,7 @@ include('inc/header.php'); ?>
 <?php if($success == true) {
     echo '<p>Bravo merci pour votre message</p>';
 } else { ?>
-    <form action="index.php" method="POST" class="wrap">
+    <form action="index.php" method="POST" class="wrap" novalidate>
         <label for="nom">Nom *</label>
         <input type="text" id="nom" name="nom" value="<?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } ?>">
         <span class="error"><?php if(!empty($errors['nom'])) {echo $errors['nom']; } ?></span>
@@ -68,6 +48,37 @@ include('inc/header.php'); ?>
         <label for="message">Message</label>
         <textarea name="message" id="message"><?php if(!empty($_POST['message'])) { echo $_POST['message']; } ?></textarea>
         <span class="error"><?php if(!empty($errors['message'])) {echo $errors['message']; } ?></span>
+
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+        <span class="error"><?php if(!empty($errors['email'])) {echo $errors['email']; } ?></span>
+
+        <label for="url">Site Web</label>
+        <input type="text" id="url" name="url" value="<?php if(!empty($_POST['url'])) { echo $_POST['url']; } ?>">
+        <span class="error"><?php if(!empty($errors['url'])) {echo $errors['url']; } ?></span>
+        <?php
+            $allfruits = array(
+                'kiwi'   => 'Kiwi',
+                'orange' => 'Orange',
+                'papaye' => 'papaye'
+            );
+        ?>
+        <label for="fruits">Fruits</label>
+        <select name="fruits" id="fruits">
+            <option value="">---------------------</option>
+            <?php foreach ($allfruits as $key => $value) {
+                $selected = '';
+                if(!empty($_POST['fruits'])) {
+                    if($_POST['fruits'] == $key) {
+                        $selected = ' selected="selected"';
+                    }
+                }
+                ?>
+                <option value="<?php echo $key; ?>"<?php echo $selected; ?>><?php echo $value; ?></option>
+            <?php } ?>
+        </select>
+        <span class="error"><?php if(!empty($errors['fruits'])) {echo $errors['fruits']; } ?></span>
+
 
         <input type="submit" name="submitted" value="Envoyer">
     </form>
