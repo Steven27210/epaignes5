@@ -79,7 +79,6 @@ include('inc/header.php'); ?>
         </select>
         <span class="error"><?php if(!empty($errors['fruits'])) {echo $errors['fruits']; } ?></span>
 
-
         <input type="submit" name="submitted" value="Envoyer">
     </form>
 <?php } ?>

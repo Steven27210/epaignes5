@@ -48,7 +48,7 @@ function validUrl($errors,$data,$key)
         if (!filter_var($data, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) {
             $errors[$key] = 'Veuillez renseigner une url valide';
         }
-    } else{
+    } else {
         $errors[$key] = 'Veuillez renseigner une url';
     }
     return $errors;
